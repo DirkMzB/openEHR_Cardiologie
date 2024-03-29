@@ -313,7 +313,7 @@
         "nodeId" : "at0.5",
         "attributes" : [ ],
         "attributeTuples" : [ ],
-        "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-034.v1",
+        "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-037.v1",
         "referenceType" : "archetypeOverlay"
       } ]
     } ],
@@ -9501,7 +9501,39 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "SECTION",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "existence" : "0..1",
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "OBSERVATION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-body_surface_area-034.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "OBSERVATION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0.2",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-imaging_exam_result-035.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "OBSERVATION",
+          "occurrences" : "0..1",
+          "nodeId" : "at0.3",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-kardiologische_parameter-036.v0",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -9731,6 +9763,1352 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "47c86b03-8289-497c-8203-5234618614ad",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "C3362CD4E1C6A0A7484CBD220AA6A306"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.body_surface_area.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-body_surface_area-034.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0002.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0004",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_QUANTITY",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "property",
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "terminologyId" : {
+                                "value" : "openehr"
+                              },
+                              "constraint" : [ "335" ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ {
+                            "@type" : "C_ATTRIBUTE_TUPLE",
+                            "members" : [ {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "magnitude",
+                              "children" : [ ]
+                            }, {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "units",
+                              "children" : [ ]
+                            }, {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "precision",
+                              "children" : [ ]
+                            } ],
+                            "tuples" : [ {
+                              "@type" : "C_PRIMITIVE_TUPLE",
+                              "members" : [ {
+                                "@type" : "C_REAL",
+                                "constraint" : [ {
+                                  "lower" : 0.0,
+                                  "lowerIncluded" : true,
+                                  "upperIncluded" : false,
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : true
+                                } ]
+                              }, {
+                                "@type" : "C_STRING",
+                                "constraint" : [ "m2" ]
+                              }, {
+                                "@type" : "C_INTEGER",
+                                "constraint" : [ {
+                                  "lower" : 2,
+                                  "upper" : 2,
+                                  "lowerIncluded" : true,
+                                  "upperIncluded" : true,
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
+                                } ]
+                              } ]
+                            } ]
+                          } ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ],
+                      "attributeCustomizations" : {
+                        "null_flavour" : {
+                          "aliases" : {
+                            "en" : "null_flavour",
+                            "fi" : "null_flavour",
+                            "nb" : "null_flavour",
+                            "de" : "null_flavour"
+                          }
+                        }
+                      }
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0019.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "state",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0020",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0021.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0005",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0009.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "CODE_PHRASE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "at0010", "at0011" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0006",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "CODE_PHRASE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "at0012", "at0013", "at0014", "at0015", "at0016", "at0017", "at0018" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_TEXT",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ],
+              "attributeCustomizations" : {
+                "null_flavour" : {
+                  "aliases" : {
+                    "en" : "null_flavour",
+                    "fi" : "null_flavour",
+                    "nb" : "null_flavour",
+                    "de" : "null_flavour"
+                  }
+                }
+              }
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "fi" : { },
+        "nb" : { },
+        "de" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "a148404b-53c7-44fa-b5e8-6f84e04863d0",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Aljoscha Kindermann",
+        "organisation" : "University Hospital of Heidelberg",
+        "email" : "aljoscha.kindermann@med.uni-heidelberg.de"
+      },
+      "accreditation" : "Data Steward HiGHmed Use Case Cardiology",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fi"
+      },
+      "author" : {
+        "name" : "Vesa Peltola",
+        "organisation" : "Tieto Finland",
+        "email" : "vesa.peltola@tieto.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "John Tore Valand",
+        "organisation" : "Haukeland Universitetssjukehus",
+        "email" : "john.tore.valand@helse-bergen.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "b4a88b6a-33f1-45df-b961-75c3e7eca950",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "60DD7069B50AAF5B394E3F246F80BCB5"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.imaging_exam_result.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-imaging_exam_result-035.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0002.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0004.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_STRING",
+                              "constraint" : [ "TTE-Transthorakale Echokardiographie" ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0091.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "0..1",
+                            "children" : [ {
+                              "@type" : "C_STRING",
+                              "constraint" : [ "Ultraschall" ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0055.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0070.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0072.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_CODED_TEXT",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "defining_code",
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "rmTypeName" : "CODE_PHRASE",
+                              "occurrences" : "1..1",
+                              "terminologyId" : {
+                                "value" : "local"
+                              },
+                              "constraint" : [ "at0073", "at0074", "at0075", "at0076", "at0077", "at0078", "at0079", "at0080", "at0090" ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0071.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0061.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0014.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0008.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0056.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0063.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0057.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0021.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0058.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0020.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0059.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0023.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "state",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0047",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0048.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0108.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0025",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0092.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_IDENTIFIER",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0105.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0104.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_IDENTIFIER",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0099.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "CODE_PHRASE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "at0100", "at0101", "at0102", "at0103" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_TEXT",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0098.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_TEXT",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_URI",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0106.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0087.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0049.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..1",
+              "nodeId" : "at0088.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0062.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "CLUSTER",
+              "nodeId" : "at0093.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "items",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0094.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "nodeId" : "at0095.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_IDENTIFIER",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0096.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0097.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_TEXT",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_URI",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..1",
+              "nodeId" : "at0027.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "items",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "nodeId" : "at0031.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_IDENTIFIER",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0028.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_IDENTIFIER",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_TEXT",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0029.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Name der Untersuchung",
+            "description" : "The name of the imaging examination performed.",
+            "comment" : "For example: 'CT abdomen'; 'Doppler ultrasound of renal artery' or 'Plain chest xray'. Coding with a terminology is strongly recommended, preferably a term specifying both modality and anatomical location, where possible. Examples of candidate terminologies are the LOINC Imaging Document Codes, RadLex Playbook or SNOMED-CT. Equivalent to DiagnosticReport.code in FHIR."
+          },
+          "at0061.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0061.1",
+            "text" : "Klinische Fragestellung",
+            "description" : "Narrative description about the reason the examination was originally requested.",
+            "comment" : "Also known as 'Clinical question' or 'Clinical query'."
+          },
+          "at0092.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0092.1",
+            "text" : "DICOM Studienkennung",
+            "description" : "Unique identifier for the imaging study assigned by the imaging device.",
+            "comment" : "Equivalent to Study Instance UID (0020,000D) in DICOM and ImagingStudy.identifier in FHIR."
+          },
+          "at0104.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0104.1",
+            "text" : "Berichtskennung",
+            "description" : "Unique identifier for the imaging report assigned by the radiology service.",
+            "comment" : "As one instance of this archetype is used per study, this identifier can be used to connect more than one imaging study within a single combined report. Equivalent to DiagnosticReport.identifier in FHIR. "
+          },
+          "at0088.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0088.1",
+            "text" : "Prozedur",
+            "description" : "Identification of the clinical procedure or management used to capture the study."
+          },
+          "at0093.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0093.1",
+            "text" : "Vergleichsaufnahmen",
+            "description" : "Details about images from a prior study used for comparison to the reported study."
+          },
+          "at0095.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0095.1",
+            "text" : "DICOM Serienkennung",
+            "description" : "Unique identifier for the comparison imaging study."
+          },
+          "at0031.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0031.1",
+            "text" : "Auftragskennung",
+            "description" : "Unique identifier for the imaging examination order assigned by the radiology service.",
+            "comment" : "Equivalent to the HL7 Filler Order Identifier or DICOM Accession number attribute (0008,0050)."
+          }
+        },
+        "nb" : {
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Name der Untersuchung",
+            "description" : "Navnet på den utførte bildediagnostiske undersøkelsen.",
+            "comment" : "For eksempel: \"CT abdomen\", \"Doppler ultralyd av nyrearterier\", \"Røntgen thorax\". Det anbefales sterkt å bruke en terminologi der det er mulig, fortrinnsvis en kode som både spesifiserer modalitet og anatomisk lokalisering. Mulige terminologier er NCRP, LOINC, SNOMED CT eller RadLex. Vanligvis tilsvarende FIHR DiagnosticReport.code."
+          },
+          "at0061.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0061.1",
+            "text" : "Klinische Fragestellung",
+            "description" : "Tekstlig beskrivelse av begrunnelsen for henvisningen/rekvisisjonen.",
+            "comment" : "Også kjent som \"Begrunnelse for rekvisisjon/henvisning\"."
+          },
+          "at0092.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0092.1",
+            "text" : "DICOM Studienkennung",
+            "description" : "Unik identifikator for bildeundersøkelsen som tildeles av radiologisystemet (RIS/PACS).",
+            "comment" : "Tilsvarer DICOM Study Instance UID (0020,000D) og ImagingStudy.identifier i FHIR."
+          },
+          "at0104.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0104.1",
+            "text" : "Berichtskennung",
+            "description" : "Den lokale, unike identifikator som tildeles en bildediagnostisk svarrapport av radiologisystemet (RIS/PACS).",
+            "comment" : "Siden en instans av denne arketypen brukes per undersøkelse, kan denne ID'en knyttes til flere enn en undersøkelse, og brukes for å koble sammen svar på flere undersøkelser i en sammenstilt svarrapport. Tilsvarer DiagnosticReport.identifier i FHIR."
+          },
+          "at0088.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0088.1",
+            "text" : "Prozedur",
+            "description" : "Identifisering av den kliniske prosedyren eller håndteringen som er brukt som en del av den bildediagnostiske undersøkelsen."
+          },
+          "at0093.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0093.1",
+            "text" : "Vergleichsaufnahmen",
+            "description" : "Detaljer om bilder fra en tidligere bildediagnostisk undersøkelse som er bruk til sammenlikning."
+          },
+          "at0095.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0095.1",
+            "text" : "DICOM Serienkennung",
+            "description" : "Den unike identifikatoren til den bildediagnostisk undersøkelsen det sammenlignes med."
+          },
+          "at0031.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0031.1",
+            "text" : "Auftragskennung",
+            "description" : "Henvisningens lokale identifikator/referansenummer i tjenesteyter/mottakers system, som regel tildelt av radiologisystemet (RIS/PACS).",
+            "comment" : "Tilsvarer HL7 Filler Order Identifier or DICOM Accession number attribute (0008,0050)."
+          }
+        },
+        "de" : {
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Name der Untersuchung",
+            "description" : "Der Name der durchgeführten bildgebenden Untersuchung.",
+            "comment" : "Zum Beispiel: „CT Abdomen“, „Doppler-Ultraschall der Nierenarterie“ oder „Röntgenaufnahme des Brustkorbs“. Es wird dringend empfohlen, eine Terminologie zu verwenden, vorzugsweise einen Begriff, der sowohl die Modalität als auch die anatomische Lokalisation angibt, sofern möglich. Beispiele für mögliche Terminologien sind die LOINC Imaging Document Codes, RadLex Playbook oder SNOMED-CT. Entspricht DiagnosticReport.code in FHIR."
+          },
+          "at0061.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0061.1",
+            "text" : "Klinische Fragestellung",
+            "description" : "Die Beschreibung des Grundes für die ursprüngliche Untersuchungsanfrage.",
+            "comment" : "Auch bekannt als „Klinische Fragestellung“ oder „Klinische Frage“."
+          },
+          "at0092.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0092.1",
+            "text" : "DICOM Studienkennung",
+            "description" : "Eindeutige Kennung für die vom Bildgebungsgerät zugewiesene Bildgebungsstudie.",
+            "comment" : "Entspricht der Study Instance UID (0020.000D) in DICOM und ImagingStudy.identifier in FHIR."
+          },
+          "at0104.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0104.1",
+            "text" : "Berichtskennung",
+            "description" : "Eindeutige Kennung für den vom Radiologiedienst vergebenen Bildgebungsbericht.",
+            "comment" : "Da pro Studie eine Instanz dieses Archetyps verwendet wird, kann diese Identifikation verwendet werden, um mehr als eine Bildgebungsstudie in einem einzigen kompakten Bericht zu verbinden. Entspricht DiagnosticReport.identifier in FHIR."
+          },
+          "at0088.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0088.1",
+            "text" : "Prozedur",
+            "description" : "Identifizierung des klinischen Verfahrens oder Managements, das zur Erfassung der Studie verwendet wurde."
+          },
+          "at0093.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0093.1",
+            "text" : "Vergleichsaufnahmen",
+            "description" : "Details zu Bildern aus einer früheren Studie, die zum Vergleich mit der berichteten Studie verwendet wurden."
+          },
+          "at0095.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0095.1",
+            "text" : "DICOM Serienkennung",
+            "description" : "Eindeutige Kennung für die Vergleichsbildgebungsstudie."
+          },
+          "at0031.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0031.1",
+            "text" : "Auftragskennung",
+            "description" : "Eindeutige Kennung für den Auftrag der bildgebenden Untersuchung, vergeben durch den radiologischen Dienst.",
+            "comment" : "Entspricht dem HL7 Filler Order Identifier oder dem DICOM Accession number attribute (0008,0050)."
+          }
+        },
+        "sv" : {
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Name der Untersuchung",
+            "description" : "*The name of the imaging examination performed. (en)",
+            "comment" : "*For example: 'CT abdomen'; 'Doppler ultrasound of renal artery' or 'Plain chest xray'. Coding with a terminology is strongly recommended, preferably a term specifying both modality and anatomical location, where possible. Examples of candidate terminologies are the LOINC Imaging Document Codes, RadLex Playbook or SNOMED-CT. Equivalent to DiagnosticReport.code in FHIR. (en)"
+          },
+          "at0061.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0061.1",
+            "text" : "Klinische Fragestellung",
+            "description" : "*Narrative description about the reason the examination was originally requested. (en)",
+            "comment" : "*Also known as 'Clinical question' or 'Clinical query'. (en)"
+          },
+          "at0092.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0092.1",
+            "text" : "DICOM Studienkennung",
+            "description" : "*Unique identifier for the imaging study assigned by the imaging device. (en)",
+            "comment" : "*Equivalent to Study Instance UID (0020,000D) in DICOM and ImagingStudy.identifier in FHIR. (en)"
+          },
+          "at0104.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0104.1",
+            "text" : "Berichtskennung",
+            "description" : "*Unique identifier for the imaging report assigned by the radiology service. (en)",
+            "comment" : "*As one instance of this archetype is used per study, this identifier can be used to connect more than one imaging study within a single combined report. Equivalent to DiagnosticReport.identifier in FHIR.  (en)"
+          },
+          "at0088.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0088.1",
+            "text" : "Prozedur",
+            "description" : "*Identification of the clinical procedure or management used to capture the study. (en)"
+          },
+          "at0093.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0093.1",
+            "text" : "Vergleichsaufnahmen",
+            "description" : "*Details about images from a prior study used for comparison to the reported study. (en)"
+          },
+          "at0095.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0095.1",
+            "text" : "DICOM Serienkennung",
+            "description" : "*Unique identifier for the comparison imaging study. (en)"
+          },
+          "at0031.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0031.1",
+            "text" : "Auftragskennung",
+            "description" : "*Unique identifier for the imaging examination order assigned by the radiology service. (en)",
+            "comment" : "*Equivalent to the HL7 Filler Order Identifier or DICOM Accession number attribute (0008,0050). (en)"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "7a6046b4-804f-4b4f-bda2-661f5814f290",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "application" : "Adl Designer",
+        "name" : "Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : {
+        "notes" : "Generated automatically by Adl Designer"
+      }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Linda Aulin",
+        "organisation" : "Region Stockholm",
+        "email" : "linda.aulin@sll.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Vebjørn Arntzen, Liv Laugen",
+        "organisation" : "​Oslo University Hospital, Norway",
+        "email" : "varntzen@ous-hf.no, liv.laugen@ous-hf.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "64b91e05-e25d-41d9-b398-8a1697ff01df",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "8C519E9A9F47254C0A6DF3A8562BCA1B"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.kardiologische_parameter.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-kardiologische_parameter-036.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "nodeId" : "at0002",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "CLUSTER",
+                      "nodeId" : "at0004",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "items",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "CLUSTER",
+                          "nodeId" : "at0041",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "items",
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "CLUSTER",
+                              "nodeId" : "at0066",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "items",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "ELEMENT",
+                                  "nodeId" : "at0091.1",
+                                  "attributes" : [ {
+                                    "@type" : "C_ATTRIBUTE",
+                                    "rmAttributeName" : "value",
+                                    "children" : [ {
+                                      "@type" : "C_COMPLEX_OBJECT",
+                                      "rmTypeName" : "DV_QUANTITY",
+                                      "attributes" : [ {
+                                        "@type" : "C_ATTRIBUTE",
+                                        "rmAttributeName" : "property",
+                                        "children" : [ {
+                                          "@type" : "C_TERMINOLOGY_CODE",
+                                          "terminologyId" : {
+                                            "value" : "openehr"
+                                          },
+                                          "constraint" : [ "338" ]
+                                        } ]
+                                      } ],
+                                      "attributeTuples" : [ {
+                                        "@type" : "C_ATTRIBUTE_TUPLE",
+                                        "members" : [ {
+                                          "@type" : "C_ATTRIBUTE",
+                                          "rmAttributeName" : "units",
+                                          "children" : [ ]
+                                        } ],
+                                        "tuples" : [ {
+                                          "@type" : "C_PRIMITIVE_TUPLE",
+                                          "members" : [ {
+                                            "@type" : "C_STRING",
+                                            "constraint" : [ "m/s" ]
+                                          } ]
+                                        } ]
+                                      } ]
+                                    } ]
+                                  } ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "CLUSTER",
+                              "occurrences" : "0..0",
+                              "nodeId" : "at0068.1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "CLUSTER",
+                              "nodeId" : "at0070",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "items",
+                                "children" : [ {
+                                  "@type" : "C_COMPLEX_OBJECT",
+                                  "rmTypeName" : "ELEMENT",
+                                  "nodeId" : "at0034.1",
+                                  "attributes" : [ {
+                                    "@type" : "C_ATTRIBUTE",
+                                    "rmAttributeName" : "value",
+                                    "children" : [ {
+                                      "@type" : "C_COMPLEX_OBJECT",
+                                      "rmTypeName" : "DV_QUANTITY",
+                                      "attributes" : [ {
+                                        "@type" : "C_ATTRIBUTE",
+                                        "rmAttributeName" : "property",
+                                        "children" : [ {
+                                          "@type" : "C_TERMINOLOGY_CODE",
+                                          "terminologyId" : {
+                                            "value" : "openehr"
+                                          },
+                                          "constraint" : [ "338" ]
+                                        } ]
+                                      } ],
+                                      "attributeTuples" : [ {
+                                        "@type" : "C_ATTRIBUTE_TUPLE",
+                                        "members" : [ {
+                                          "@type" : "C_ATTRIBUTE",
+                                          "rmAttributeName" : "units",
+                                          "children" : [ ]
+                                        } ],
+                                        "tuples" : [ {
+                                          "@type" : "C_PRIMITIVE_TUPLE",
+                                          "members" : [ {
+                                            "@type" : "C_STRING",
+                                            "constraint" : [ "m/s" ]
+                                          } ]
+                                        } ]
+                                      } ]
+                                    } ]
+                                  } ],
+                                  "attributeTuples" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "quantitative Parameter",
+            "description" : "This archetype contains a collection of standard cardiovascular parameters."
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "84edcb5a-58bf-4cde-a85a-5950ce0d76fb",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "de"
+    },
+    "translations" : [ ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
     "uid" : "a82233b9-7f2d-4dd5-8db4-37f6963cfd8c",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
@@ -9748,7 +11126,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-SECTION.ovl-adhoc-034.v1"
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-037.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -9765,7 +11143,7 @@
           "nodeId" : "at0.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-035.v1",
+          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-038.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -9774,7 +11152,7 @@
           "nodeId" : "at0.2",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-042.v1",
+          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-045.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -9783,7 +11161,7 @@
           "nodeId" : "at0.3",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-049.v1",
+          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-052.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -9792,7 +11170,7 @@
           "nodeId" : "at0.4",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-051.v1",
+          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-054.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -9801,7 +11179,7 @@
           "nodeId" : "at0.5",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-053.v1",
+          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-056.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -9810,7 +11188,7 @@
           "nodeId" : "at0.6",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-055.v1",
+          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-058.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -9819,7 +11197,7 @@
           "nodeId" : "at0.7",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-057.v1",
+          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-060.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -9828,7 +11206,7 @@
           "nodeId" : "at0.8",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-059.v1",
+          "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-062.v1",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -10078,7 +11456,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-SECTION.ovl-adhoc-035.v1"
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-038.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -10095,7 +11473,7 @@
           "nodeId" : "at0.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-036.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-039.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -10104,7 +11482,7 @@
           "nodeId" : "at0.2",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-037.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-040.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -10113,7 +11491,7 @@
           "nodeId" : "at0.3",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-038.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-041.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -10122,7 +11500,7 @@
           "nodeId" : "at0.4",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-039.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-042.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -10131,7 +11509,7 @@
           "nodeId" : "at0.5",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-040.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-043.v1",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -10140,7 +11518,7 @@
           "nodeId" : "at0.6",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-041.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-044.v1",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -10390,7 +11768,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-036.v1"
+      "value" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-039.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -10559,777 +11937,6 @@
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
             "text" : "Ausschluss Mitralklappeninsuffizienz (MI)",
-            "description" : "Ett uteslutande av specifikt problem/diagnoser, ärftlighet, läkemedel, ingrepp, biverkningar eller annat, som antingen inte föreligger nu eller som inte har uppträtt tidigare."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Identifiering av det som specifikt har uteslutits.",
-            "comment" : "Kan användas på två sätt."
-          }
-        }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "6297929d-1789-4731-90a8-03a061405761",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Ramona Wellmann",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "wellmann.ramona@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Åsa Skagerhult",
-        "organisation" : "Region Östergötland",
-        "email" : "asa.skagerhult@regionostergotland.se"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "John Tore Valand",
-        "organisation" : "Helse Bergen HF"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "d99024d9-35e2-4d70-90ac-ec2e5bb8ced2",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "FD31B6A3D7C0FE6280E39084A789BA00"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-EVALUATION.exclusion_specific.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-037.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "EVALUATION",
-      "nodeId" : "at0000.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "data",
-        "children" : [ {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ITEM_TREE",
-          "nodeId" : "at0001",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "items",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "nodeId" : "at0002.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
-                    "children" : [ {
-                      "@type" : "C_TERMINOLOGY_CODE",
-                      "terminologyId" : {
-                        "value" : "http://snomed.info/sct"
-                      },
-                      "constraint" : [ ],
-                      "includedExternalTerminologyCodes" : [ {
-                        "terminologyId" : "http://snomed.info/sct",
-                        "code" : "410594000",
-                        "value" : "Definitely NOT present (qualifier value)"
-                      } ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "nodeId" : "at0003.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "name",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_CODED_TEXT",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "defining_code",
-                    "children" : [ {
-                      "@type" : "C_TERMINOLOGY_CODE",
-                      "rmTypeName" : "CODE_PHRASE",
-                      "occurrences" : "1..1",
-                      "terminologyId" : {
-                        "value" : "local"
-                      },
-                      "constraint" : [ "at0004" ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              }, {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
-                    "children" : [ {
-                      "@type" : "C_TERMINOLOGY_CODE",
-                      "terminologyId" : {
-                        "value" : "http://snomed.info/sct"
-                      },
-                      "constraint" : [ ],
-                      "includedExternalTerminologyCodes" : [ {
-                        "terminologyId" : "http://snomed.info/sct",
-                        "code" : "60573004",
-                        "value" : "Aortic valve stenosis (disorder)"
-                      } ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0012.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        } ]
-      } ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Aortenklappenstenose (AS)",
-            "description" : "A statement of exclusion of a specific Problem/diagnosis, Family history, Medication, Procedure, Adverse reaction or other clinical item that is either not currently present, or have not been present in the past."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Identification of the specific concept which has been excluded.",
-            "comment" : "Use this data element in one of two ways. Firstly, exclusion of family history of diabetes can be expressed by using 'Family problem/diagnosis' as the run-time name constraint and 'diabetes' as the value for this data point. Alternatively the value could contain precoordinated terms such as 'No past family history of diabetes'.\r\n\r\nCoding of the value for 'Excluded concept', either as a simple or precoordinated term, with a terminology is desirable where possible.\r\n\r\nIf a precoordinated term is used with this data element the 'Exclusion statement' becomes redundant."
-          }
-        },
-        "nb" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Aortenklappenstenose (AS)",
-            "description" : "Et utsagn om eksklusjon av en spesifikk problem/diagnose, familiær sykdom, legemiddel, prosedyre, overfølsomhet eller andre kliniske konsepter som ikke er tilstede hos et individ, enten i nåtid eller fortid."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Navngiving av det spesifikke konseptet som ekskluderes.",
-            "comment" : "Dette dataelementet kan brukes på to forskjellige måter. For det første kan eksklusjon av familiær diabetes uttrykkes ved å bruke runtime name constraint'en \"Familiær sykdom\", og \"diabetes\" som elementets verdi. Alternativt kan verdien være et prekoordinert uttrykk som \"Ingen kjent diabetes i familien\". Der det er mulig er det ønskelig å kode verdien av \"Ekskludert konsept\" med en terminologi, enten med enkle eller prekoordinerte termer.\r\n\r\nDersom en prekoordinert term brukes i dette dataelementet blir elementet \"Eksklusjonsutsagn\" overflødig."
-          }
-        },
-        "de" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Aortenklappenstenose (AS)",
-            "description" : "Ein Bericht über den Ausschluss eines/r Problems/Diagnose, familiäre Krankengeschichte, Medikation, Nebenwirkung/Allergens oder eines anderen klinischen Ereignisses, welche/s zur Zeit nicht oder noch nie vorhanden war."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Benennung der Kategorie, des ausgeschlossenen Sachverhalts.",
-            "comment" : "Dieses Item kann unterschiedlich genutzt werden. Zum Beispiel: \"Familiäre Vorgeschichte Diabetes\":\r\n\r\n(1) Einschränkung des Namens der \"ausgeschlossenen Kategorie\" zur Laufzeit über einen \"Name constraint\" (in diesem Fall \"familiäre Probleme/Diagnosen\") und Speicherung von \"Diabetes\" als Wert dieses Datenelements. \r\noder\r\n(2) Belegung des Wertes mit Hilfe von präkoordinierten Benennungen, z.B. \"keine familiäre Diabetes-Vorgeschichte\".\r\n\r\nDie Kodierung des Datenelements \"ausgeschlossene Kategorie\", z.B. durch präkoordinierte Benennungen oder Terminologien, ist wünschenswert.\r\n\r\nWird das Datenelement wie in Beispiel (2) kodiert, ist eine weitere Spezifikation im Feld \"Aussage über den Ausschluss\" nicht notwendig."
-          }
-        },
-        "sv" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Aortenklappenstenose (AS)",
-            "description" : "Ett uteslutande av specifikt problem/diagnoser, ärftlighet, läkemedel, ingrepp, biverkningar eller annat, som antingen inte föreligger nu eller som inte har uppträtt tidigare."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Identifiering av det som specifikt har uteslutits.",
-            "comment" : "Kan användas på två sätt."
-          }
-        }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "6297929d-1789-4731-90a8-03a061405761",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Ramona Wellmann",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "wellmann.ramona@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Åsa Skagerhult",
-        "organisation" : "Region Östergötland",
-        "email" : "asa.skagerhult@regionostergotland.se"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "John Tore Valand",
-        "organisation" : "Helse Bergen HF"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "d99024d9-35e2-4d70-90ac-ec2e5bb8ced2",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "FD31B6A3D7C0FE6280E39084A789BA00"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-EVALUATION.exclusion_specific.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-038.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "EVALUATION",
-      "nodeId" : "at0000.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "data",
-        "children" : [ {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ITEM_TREE",
-          "nodeId" : "at0001",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "items",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "nodeId" : "at0002.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
-                    "children" : [ {
-                      "@type" : "C_TERMINOLOGY_CODE",
-                      "terminologyId" : {
-                        "value" : "http://snomed.info/sct"
-                      },
-                      "constraint" : [ ],
-                      "includedExternalTerminologyCodes" : [ {
-                        "terminologyId" : "http://snomed.info/sct",
-                        "code" : "410594000",
-                        "value" : "Definitely NOT present (qualifier value)"
-                      } ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "nodeId" : "at0003.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "name",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_CODED_TEXT",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "defining_code",
-                    "children" : [ {
-                      "@type" : "C_TERMINOLOGY_CODE",
-                      "rmTypeName" : "CODE_PHRASE",
-                      "occurrences" : "1..1",
-                      "terminologyId" : {
-                        "value" : "local"
-                      },
-                      "constraint" : [ "at0004" ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              }, {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
-                    "children" : [ {
-                      "@type" : "C_TERMINOLOGY_CODE",
-                      "terminologyId" : {
-                        "value" : "http://snomed.info/sct"
-                      },
-                      "constraint" : [ ],
-                      "includedExternalTerminologyCodes" : [ {
-                        "terminologyId" : "http://snomed.info/sct",
-                        "code" : "91434003",
-                        "value" : "Pulmonic valve regurgitation (disorder)"
-                      } ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0012.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        } ]
-      } ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Pulmonalklappeninsuffizienz (PI)",
-            "description" : "A statement of exclusion of a specific Problem/diagnosis, Family history, Medication, Procedure, Adverse reaction or other clinical item that is either not currently present, or have not been present in the past."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Identification of the specific concept which has been excluded.",
-            "comment" : "Use this data element in one of two ways. Firstly, exclusion of family history of diabetes can be expressed by using 'Family problem/diagnosis' as the run-time name constraint and 'diabetes' as the value for this data point. Alternatively the value could contain precoordinated terms such as 'No past family history of diabetes'.\r\n\r\nCoding of the value for 'Excluded concept', either as a simple or precoordinated term, with a terminology is desirable where possible.\r\n\r\nIf a precoordinated term is used with this data element the 'Exclusion statement' becomes redundant."
-          }
-        },
-        "nb" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Pulmonalklappeninsuffizienz (PI)",
-            "description" : "Et utsagn om eksklusjon av en spesifikk problem/diagnose, familiær sykdom, legemiddel, prosedyre, overfølsomhet eller andre kliniske konsepter som ikke er tilstede hos et individ, enten i nåtid eller fortid."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Navngiving av det spesifikke konseptet som ekskluderes.",
-            "comment" : "Dette dataelementet kan brukes på to forskjellige måter. For det første kan eksklusjon av familiær diabetes uttrykkes ved å bruke runtime name constraint'en \"Familiær sykdom\", og \"diabetes\" som elementets verdi. Alternativt kan verdien være et prekoordinert uttrykk som \"Ingen kjent diabetes i familien\". Der det er mulig er det ønskelig å kode verdien av \"Ekskludert konsept\" med en terminologi, enten med enkle eller prekoordinerte termer.\r\n\r\nDersom en prekoordinert term brukes i dette dataelementet blir elementet \"Eksklusjonsutsagn\" overflødig."
-          }
-        },
-        "de" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Pulmonalklappeninsuffizienz (PI)",
-            "description" : "Ein Bericht über den Ausschluss eines/r Problems/Diagnose, familiäre Krankengeschichte, Medikation, Nebenwirkung/Allergens oder eines anderen klinischen Ereignisses, welche/s zur Zeit nicht oder noch nie vorhanden war."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Benennung der Kategorie, des ausgeschlossenen Sachverhalts.",
-            "comment" : "Dieses Item kann unterschiedlich genutzt werden. Zum Beispiel: \"Familiäre Vorgeschichte Diabetes\":\r\n\r\n(1) Einschränkung des Namens der \"ausgeschlossenen Kategorie\" zur Laufzeit über einen \"Name constraint\" (in diesem Fall \"familiäre Probleme/Diagnosen\") und Speicherung von \"Diabetes\" als Wert dieses Datenelements. \r\noder\r\n(2) Belegung des Wertes mit Hilfe von präkoordinierten Benennungen, z.B. \"keine familiäre Diabetes-Vorgeschichte\".\r\n\r\nDie Kodierung des Datenelements \"ausgeschlossene Kategorie\", z.B. durch präkoordinierte Benennungen oder Terminologien, ist wünschenswert.\r\n\r\nWird das Datenelement wie in Beispiel (2) kodiert, ist eine weitere Spezifikation im Feld \"Aussage über den Ausschluss\" nicht notwendig."
-          }
-        },
-        "sv" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Pulmonalklappeninsuffizienz (PI)",
-            "description" : "Ett uteslutande av specifikt problem/diagnoser, ärftlighet, läkemedel, ingrepp, biverkningar eller annat, som antingen inte föreligger nu eller som inte har uppträtt tidigare."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Identifiering av det som specifikt har uteslutits.",
-            "comment" : "Kan användas på två sätt."
-          }
-        }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "6297929d-1789-4731-90a8-03a061405761",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Ramona Wellmann",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "wellmann.ramona@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Åsa Skagerhult",
-        "organisation" : "Region Östergötland",
-        "email" : "asa.skagerhult@regionostergotland.se"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "John Tore Valand",
-        "organisation" : "Helse Bergen HF"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "d99024d9-35e2-4d70-90ac-ec2e5bb8ced2",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "FD31B6A3D7C0FE6280E39084A789BA00"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-EVALUATION.exclusion_specific.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-039.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "EVALUATION",
-      "nodeId" : "at0000.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "data",
-        "children" : [ {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ITEM_TREE",
-          "nodeId" : "at0001",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "items",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "nodeId" : "at0002.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
-                    "children" : [ {
-                      "@type" : "C_TERMINOLOGY_CODE",
-                      "terminologyId" : {
-                        "value" : "http://snomed.info/sct"
-                      },
-                      "constraint" : [ ],
-                      "includedExternalTerminologyCodes" : [ {
-                        "terminologyId" : "http://snomed.info/sct",
-                        "code" : "410594000",
-                        "value" : "Definitely NOT present (qualifier value)"
-                      } ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "nodeId" : "at0003.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "name",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_CODED_TEXT",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "defining_code",
-                    "children" : [ {
-                      "@type" : "C_TERMINOLOGY_CODE",
-                      "rmTypeName" : "CODE_PHRASE",
-                      "occurrences" : "1..1",
-                      "terminologyId" : {
-                        "value" : "local"
-                      },
-                      "constraint" : [ "at0004" ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              }, {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_CODED_TEXT",
-                  "occurrences" : "0..1",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "defining_code",
-                    "existence" : "0..1",
-                    "children" : [ {
-                      "@type" : "C_TERMINOLOGY_CODE",
-                      "terminologyId" : {
-                        "value" : "http://snomed.info/sct"
-                      },
-                      "constraint" : [ ],
-                      "includedExternalTerminologyCodes" : [ {
-                        "terminologyId" : "http://snomed.info/sct",
-                        "code" : "111287006",
-                        "value" : "Tricuspid valve regurgitation (disorder)"
-                      } ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0012.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        } ]
-      } ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Trikuspidalklappeninsuffizienz (TI)",
-            "description" : "A statement of exclusion of a specific Problem/diagnosis, Family history, Medication, Procedure, Adverse reaction or other clinical item that is either not currently present, or have not been present in the past."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Identification of the specific concept which has been excluded.",
-            "comment" : "Use this data element in one of two ways. Firstly, exclusion of family history of diabetes can be expressed by using 'Family problem/diagnosis' as the run-time name constraint and 'diabetes' as the value for this data point. Alternatively the value could contain precoordinated terms such as 'No past family history of diabetes'.\r\n\r\nCoding of the value for 'Excluded concept', either as a simple or precoordinated term, with a terminology is desirable where possible.\r\n\r\nIf a precoordinated term is used with this data element the 'Exclusion statement' becomes redundant."
-          }
-        },
-        "nb" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Trikuspidalklappeninsuffizienz (TI)",
-            "description" : "Et utsagn om eksklusjon av en spesifikk problem/diagnose, familiær sykdom, legemiddel, prosedyre, overfølsomhet eller andre kliniske konsepter som ikke er tilstede hos et individ, enten i nåtid eller fortid."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Navngiving av det spesifikke konseptet som ekskluderes.",
-            "comment" : "Dette dataelementet kan brukes på to forskjellige måter. For det første kan eksklusjon av familiær diabetes uttrykkes ved å bruke runtime name constraint'en \"Familiær sykdom\", og \"diabetes\" som elementets verdi. Alternativt kan verdien være et prekoordinert uttrykk som \"Ingen kjent diabetes i familien\". Der det er mulig er det ønskelig å kode verdien av \"Ekskludert konsept\" med en terminologi, enten med enkle eller prekoordinerte termer.\r\n\r\nDersom en prekoordinert term brukes i dette dataelementet blir elementet \"Eksklusjonsutsagn\" overflødig."
-          }
-        },
-        "de" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Trikuspidalklappeninsuffizienz (TI)",
-            "description" : "Ein Bericht über den Ausschluss eines/r Problems/Diagnose, familiäre Krankengeschichte, Medikation, Nebenwirkung/Allergens oder eines anderen klinischen Ereignisses, welche/s zur Zeit nicht oder noch nie vorhanden war."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Problem/Diagnose",
-            "description" : "Benennung der Kategorie, des ausgeschlossenen Sachverhalts.",
-            "comment" : "Dieses Item kann unterschiedlich genutzt werden. Zum Beispiel: \"Familiäre Vorgeschichte Diabetes\":\r\n\r\n(1) Einschränkung des Namens der \"ausgeschlossenen Kategorie\" zur Laufzeit über einen \"Name constraint\" (in diesem Fall \"familiäre Probleme/Diagnosen\") und Speicherung von \"Diabetes\" als Wert dieses Datenelements. \r\noder\r\n(2) Belegung des Wertes mit Hilfe von präkoordinierten Benennungen, z.B. \"keine familiäre Diabetes-Vorgeschichte\".\r\n\r\nDie Kodierung des Datenelements \"ausgeschlossene Kategorie\", z.B. durch präkoordinierte Benennungen oder Terminologien, ist wünschenswert.\r\n\r\nWird das Datenelement wie in Beispiel (2) kodiert, ist eine weitere Spezifikation im Feld \"Aussage über den Ausschluss\" nicht notwendig."
-          }
-        },
-        "sv" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Ausschluss Trikuspidalklappeninsuffizienz (TI)",
             "description" : "Ett uteslutande av specifikt problem/diagnoser, ärftlighet, läkemedel, ingrepp, biverkningar eller annat, som antingen inte föreligger nu eller som inte har uppträtt tidigare."
           },
           "at0003.1" : {
@@ -11510,6 +12117,777 @@
                       "constraint" : [ ],
                       "includedExternalTerminologyCodes" : [ {
                         "terminologyId" : "http://snomed.info/sct",
+                        "code" : "60573004",
+                        "value" : "Aortic valve stenosis (disorder)"
+                      } ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0012.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Aortenklappenstenose (AS)",
+            "description" : "A statement of exclusion of a specific Problem/diagnosis, Family history, Medication, Procedure, Adverse reaction or other clinical item that is either not currently present, or have not been present in the past."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Identification of the specific concept which has been excluded.",
+            "comment" : "Use this data element in one of two ways. Firstly, exclusion of family history of diabetes can be expressed by using 'Family problem/diagnosis' as the run-time name constraint and 'diabetes' as the value for this data point. Alternatively the value could contain precoordinated terms such as 'No past family history of diabetes'.\r\n\r\nCoding of the value for 'Excluded concept', either as a simple or precoordinated term, with a terminology is desirable where possible.\r\n\r\nIf a precoordinated term is used with this data element the 'Exclusion statement' becomes redundant."
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Aortenklappenstenose (AS)",
+            "description" : "Et utsagn om eksklusjon av en spesifikk problem/diagnose, familiær sykdom, legemiddel, prosedyre, overfølsomhet eller andre kliniske konsepter som ikke er tilstede hos et individ, enten i nåtid eller fortid."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Navngiving av det spesifikke konseptet som ekskluderes.",
+            "comment" : "Dette dataelementet kan brukes på to forskjellige måter. For det første kan eksklusjon av familiær diabetes uttrykkes ved å bruke runtime name constraint'en \"Familiær sykdom\", og \"diabetes\" som elementets verdi. Alternativt kan verdien være et prekoordinert uttrykk som \"Ingen kjent diabetes i familien\". Der det er mulig er det ønskelig å kode verdien av \"Ekskludert konsept\" med en terminologi, enten med enkle eller prekoordinerte termer.\r\n\r\nDersom en prekoordinert term brukes i dette dataelementet blir elementet \"Eksklusjonsutsagn\" overflødig."
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Aortenklappenstenose (AS)",
+            "description" : "Ein Bericht über den Ausschluss eines/r Problems/Diagnose, familiäre Krankengeschichte, Medikation, Nebenwirkung/Allergens oder eines anderen klinischen Ereignisses, welche/s zur Zeit nicht oder noch nie vorhanden war."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Benennung der Kategorie, des ausgeschlossenen Sachverhalts.",
+            "comment" : "Dieses Item kann unterschiedlich genutzt werden. Zum Beispiel: \"Familiäre Vorgeschichte Diabetes\":\r\n\r\n(1) Einschränkung des Namens der \"ausgeschlossenen Kategorie\" zur Laufzeit über einen \"Name constraint\" (in diesem Fall \"familiäre Probleme/Diagnosen\") und Speicherung von \"Diabetes\" als Wert dieses Datenelements. \r\noder\r\n(2) Belegung des Wertes mit Hilfe von präkoordinierten Benennungen, z.B. \"keine familiäre Diabetes-Vorgeschichte\".\r\n\r\nDie Kodierung des Datenelements \"ausgeschlossene Kategorie\", z.B. durch präkoordinierte Benennungen oder Terminologien, ist wünschenswert.\r\n\r\nWird das Datenelement wie in Beispiel (2) kodiert, ist eine weitere Spezifikation im Feld \"Aussage über den Ausschluss\" nicht notwendig."
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Aortenklappenstenose (AS)",
+            "description" : "Ett uteslutande av specifikt problem/diagnoser, ärftlighet, läkemedel, ingrepp, biverkningar eller annat, som antingen inte föreligger nu eller som inte har uppträtt tidigare."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Identifiering av det som specifikt har uteslutits.",
+            "comment" : "Kan användas på två sätt."
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "6297929d-1789-4731-90a8-03a061405761",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Ramona Wellmann",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "wellmann.ramona@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Åsa Skagerhult",
+        "organisation" : "Region Östergötland",
+        "email" : "asa.skagerhult@regionostergotland.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "John Tore Valand",
+        "organisation" : "Helse Bergen HF"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "d99024d9-35e2-4d70-90ac-ec2e5bb8ced2",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "FD31B6A3D7C0FE6280E39084A789BA00"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-EVALUATION.exclusion_specific.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-041.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "EVALUATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0002.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "0..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "existence" : "0..1",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "terminologyId" : {
+                        "value" : "http://snomed.info/sct"
+                      },
+                      "constraint" : [ ],
+                      "includedExternalTerminologyCodes" : [ {
+                        "terminologyId" : "http://snomed.info/sct",
+                        "code" : "410594000",
+                        "value" : "Definitely NOT present (qualifier value)"
+                      } ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0003.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "name",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "CODE_PHRASE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "at0004" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "0..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "existence" : "0..1",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "terminologyId" : {
+                        "value" : "http://snomed.info/sct"
+                      },
+                      "constraint" : [ ],
+                      "includedExternalTerminologyCodes" : [ {
+                        "terminologyId" : "http://snomed.info/sct",
+                        "code" : "91434003",
+                        "value" : "Pulmonic valve regurgitation (disorder)"
+                      } ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0012.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Pulmonalklappeninsuffizienz (PI)",
+            "description" : "A statement of exclusion of a specific Problem/diagnosis, Family history, Medication, Procedure, Adverse reaction or other clinical item that is either not currently present, or have not been present in the past."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Identification of the specific concept which has been excluded.",
+            "comment" : "Use this data element in one of two ways. Firstly, exclusion of family history of diabetes can be expressed by using 'Family problem/diagnosis' as the run-time name constraint and 'diabetes' as the value for this data point. Alternatively the value could contain precoordinated terms such as 'No past family history of diabetes'.\r\n\r\nCoding of the value for 'Excluded concept', either as a simple or precoordinated term, with a terminology is desirable where possible.\r\n\r\nIf a precoordinated term is used with this data element the 'Exclusion statement' becomes redundant."
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Pulmonalklappeninsuffizienz (PI)",
+            "description" : "Et utsagn om eksklusjon av en spesifikk problem/diagnose, familiær sykdom, legemiddel, prosedyre, overfølsomhet eller andre kliniske konsepter som ikke er tilstede hos et individ, enten i nåtid eller fortid."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Navngiving av det spesifikke konseptet som ekskluderes.",
+            "comment" : "Dette dataelementet kan brukes på to forskjellige måter. For det første kan eksklusjon av familiær diabetes uttrykkes ved å bruke runtime name constraint'en \"Familiær sykdom\", og \"diabetes\" som elementets verdi. Alternativt kan verdien være et prekoordinert uttrykk som \"Ingen kjent diabetes i familien\". Der det er mulig er det ønskelig å kode verdien av \"Ekskludert konsept\" med en terminologi, enten med enkle eller prekoordinerte termer.\r\n\r\nDersom en prekoordinert term brukes i dette dataelementet blir elementet \"Eksklusjonsutsagn\" overflødig."
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Pulmonalklappeninsuffizienz (PI)",
+            "description" : "Ein Bericht über den Ausschluss eines/r Problems/Diagnose, familiäre Krankengeschichte, Medikation, Nebenwirkung/Allergens oder eines anderen klinischen Ereignisses, welche/s zur Zeit nicht oder noch nie vorhanden war."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Benennung der Kategorie, des ausgeschlossenen Sachverhalts.",
+            "comment" : "Dieses Item kann unterschiedlich genutzt werden. Zum Beispiel: \"Familiäre Vorgeschichte Diabetes\":\r\n\r\n(1) Einschränkung des Namens der \"ausgeschlossenen Kategorie\" zur Laufzeit über einen \"Name constraint\" (in diesem Fall \"familiäre Probleme/Diagnosen\") und Speicherung von \"Diabetes\" als Wert dieses Datenelements. \r\noder\r\n(2) Belegung des Wertes mit Hilfe von präkoordinierten Benennungen, z.B. \"keine familiäre Diabetes-Vorgeschichte\".\r\n\r\nDie Kodierung des Datenelements \"ausgeschlossene Kategorie\", z.B. durch präkoordinierte Benennungen oder Terminologien, ist wünschenswert.\r\n\r\nWird das Datenelement wie in Beispiel (2) kodiert, ist eine weitere Spezifikation im Feld \"Aussage über den Ausschluss\" nicht notwendig."
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Pulmonalklappeninsuffizienz (PI)",
+            "description" : "Ett uteslutande av specifikt problem/diagnoser, ärftlighet, läkemedel, ingrepp, biverkningar eller annat, som antingen inte föreligger nu eller som inte har uppträtt tidigare."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Identifiering av det som specifikt har uteslutits.",
+            "comment" : "Kan användas på två sätt."
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "6297929d-1789-4731-90a8-03a061405761",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Ramona Wellmann",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "wellmann.ramona@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Åsa Skagerhult",
+        "organisation" : "Region Östergötland",
+        "email" : "asa.skagerhult@regionostergotland.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "John Tore Valand",
+        "organisation" : "Helse Bergen HF"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "d99024d9-35e2-4d70-90ac-ec2e5bb8ced2",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "FD31B6A3D7C0FE6280E39084A789BA00"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-EVALUATION.exclusion_specific.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-042.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "EVALUATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0002.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "0..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "existence" : "0..1",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "terminologyId" : {
+                        "value" : "http://snomed.info/sct"
+                      },
+                      "constraint" : [ ],
+                      "includedExternalTerminologyCodes" : [ {
+                        "terminologyId" : "http://snomed.info/sct",
+                        "code" : "410594000",
+                        "value" : "Definitely NOT present (qualifier value)"
+                      } ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0003.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "name",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "CODE_PHRASE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "at0004" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "0..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "existence" : "0..1",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "terminologyId" : {
+                        "value" : "http://snomed.info/sct"
+                      },
+                      "constraint" : [ ],
+                      "includedExternalTerminologyCodes" : [ {
+                        "terminologyId" : "http://snomed.info/sct",
+                        "code" : "111287006",
+                        "value" : "Tricuspid valve regurgitation (disorder)"
+                      } ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0012.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Trikuspidalklappeninsuffizienz (TI)",
+            "description" : "A statement of exclusion of a specific Problem/diagnosis, Family history, Medication, Procedure, Adverse reaction or other clinical item that is either not currently present, or have not been present in the past."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Identification of the specific concept which has been excluded.",
+            "comment" : "Use this data element in one of two ways. Firstly, exclusion of family history of diabetes can be expressed by using 'Family problem/diagnosis' as the run-time name constraint and 'diabetes' as the value for this data point. Alternatively the value could contain precoordinated terms such as 'No past family history of diabetes'.\r\n\r\nCoding of the value for 'Excluded concept', either as a simple or precoordinated term, with a terminology is desirable where possible.\r\n\r\nIf a precoordinated term is used with this data element the 'Exclusion statement' becomes redundant."
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Trikuspidalklappeninsuffizienz (TI)",
+            "description" : "Et utsagn om eksklusjon av en spesifikk problem/diagnose, familiær sykdom, legemiddel, prosedyre, overfølsomhet eller andre kliniske konsepter som ikke er tilstede hos et individ, enten i nåtid eller fortid."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Navngiving av det spesifikke konseptet som ekskluderes.",
+            "comment" : "Dette dataelementet kan brukes på to forskjellige måter. For det første kan eksklusjon av familiær diabetes uttrykkes ved å bruke runtime name constraint'en \"Familiær sykdom\", og \"diabetes\" som elementets verdi. Alternativt kan verdien være et prekoordinert uttrykk som \"Ingen kjent diabetes i familien\". Der det er mulig er det ønskelig å kode verdien av \"Ekskludert konsept\" med en terminologi, enten med enkle eller prekoordinerte termer.\r\n\r\nDersom en prekoordinert term brukes i dette dataelementet blir elementet \"Eksklusjonsutsagn\" overflødig."
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Trikuspidalklappeninsuffizienz (TI)",
+            "description" : "Ein Bericht über den Ausschluss eines/r Problems/Diagnose, familiäre Krankengeschichte, Medikation, Nebenwirkung/Allergens oder eines anderen klinischen Ereignisses, welche/s zur Zeit nicht oder noch nie vorhanden war."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Benennung der Kategorie, des ausgeschlossenen Sachverhalts.",
+            "comment" : "Dieses Item kann unterschiedlich genutzt werden. Zum Beispiel: \"Familiäre Vorgeschichte Diabetes\":\r\n\r\n(1) Einschränkung des Namens der \"ausgeschlossenen Kategorie\" zur Laufzeit über einen \"Name constraint\" (in diesem Fall \"familiäre Probleme/Diagnosen\") und Speicherung von \"Diabetes\" als Wert dieses Datenelements. \r\noder\r\n(2) Belegung des Wertes mit Hilfe von präkoordinierten Benennungen, z.B. \"keine familiäre Diabetes-Vorgeschichte\".\r\n\r\nDie Kodierung des Datenelements \"ausgeschlossene Kategorie\", z.B. durch präkoordinierte Benennungen oder Terminologien, ist wünschenswert.\r\n\r\nWird das Datenelement wie in Beispiel (2) kodiert, ist eine weitere Spezifikation im Feld \"Aussage über den Ausschluss\" nicht notwendig."
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ausschluss Trikuspidalklappeninsuffizienz (TI)",
+            "description" : "Ett uteslutande av specifikt problem/diagnoser, ärftlighet, läkemedel, ingrepp, biverkningar eller annat, som antingen inte föreligger nu eller som inte har uppträtt tidigare."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Problem/Diagnose",
+            "description" : "Identifiering av det som specifikt har uteslutits.",
+            "comment" : "Kan användas på två sätt."
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "6297929d-1789-4731-90a8-03a061405761",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Ramona Wellmann",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "wellmann.ramona@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Åsa Skagerhult",
+        "organisation" : "Region Östergötland",
+        "email" : "asa.skagerhult@regionostergotland.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "John Tore Valand",
+        "organisation" : "Helse Bergen HF"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "d99024d9-35e2-4d70-90ac-ec2e5bb8ced2",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "FD31B6A3D7C0FE6280E39084A789BA00"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-EVALUATION.exclusion_specific.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-043.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "EVALUATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0002.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "0..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "existence" : "0..1",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "terminologyId" : {
+                        "value" : "http://snomed.info/sct"
+                      },
+                      "constraint" : [ ],
+                      "includedExternalTerminologyCodes" : [ {
+                        "terminologyId" : "http://snomed.info/sct",
+                        "code" : "410594000",
+                        "value" : "Definitely NOT present (qualifier value)"
+                      } ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0003.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "name",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "CODE_PHRASE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "at0004" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "0..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "existence" : "0..1",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "terminologyId" : {
+                        "value" : "http://snomed.info/sct"
+                      },
+                      "constraint" : [ ],
+                      "includedExternalTerminologyCodes" : [ {
+                        "terminologyId" : "http://snomed.info/sct",
                         "code" : "60234000",
                         "value" : "Aortic valve regurgitation (disorder)"
                       } ]
@@ -11675,7 +13053,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-041.v1"
+      "value" : "openEHR-EHR-EVALUATION.ovl-exclusion_specific-044.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -11932,7 +13310,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-SECTION.ovl-adhoc-042.v1"
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-045.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -11949,7 +13327,7 @@
           "nodeId" : "at0.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-043.v2",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-046.v2",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -11958,7 +13336,7 @@
           "nodeId" : "at0.2",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-044.v2",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-047.v2",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -11967,7 +13345,7 @@
           "nodeId" : "at0.3",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-045.v2",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-048.v2",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -11976,7 +13354,7 @@
           "nodeId" : "at0.4",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-046.v2",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-049.v2",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -11985,7 +13363,7 @@
           "nodeId" : "at0.5",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-047.v2",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-050.v2",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -11994,7 +13372,7 @@
           "nodeId" : "at0.6",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-048.v2",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-absence-051.v2",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -12244,7 +13622,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-absence-043.v2"
+      "value" : "openEHR-EHR-EVALUATION.ovl-absence-046.v2"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -12467,7 +13845,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-absence-044.v2"
+      "value" : "openEHR-EHR-EVALUATION.ovl-absence-047.v2"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -12690,7 +14068,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-absence-045.v2"
+      "value" : "openEHR-EHR-EVALUATION.ovl-absence-048.v2"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -12913,7 +14291,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-absence-046.v2"
+      "value" : "openEHR-EHR-EVALUATION.ovl-absence-049.v2"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -13136,7 +14514,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-absence-047.v2"
+      "value" : "openEHR-EHR-EVALUATION.ovl-absence-050.v2"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -13359,7 +14737,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-absence-048.v2"
+      "value" : "openEHR-EHR-EVALUATION.ovl-absence-051.v2"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -13582,7 +14960,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-SECTION.ovl-adhoc-049.v1"
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-052.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -13599,7 +14977,7 @@
           "nodeId" : "at0.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-050.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-053.v1",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -13849,7 +15227,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-050.v1"
+      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-053.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -14422,7 +15800,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-SECTION.ovl-adhoc-051.v1"
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-054.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -14439,7 +15817,7 @@
           "nodeId" : "at0.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-052.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-055.v1",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -14689,7 +16067,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-052.v1"
+      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-055.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -15262,7 +16640,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-SECTION.ovl-adhoc-053.v1"
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-056.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -15279,7 +16657,7 @@
           "nodeId" : "at0.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-054.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-057.v1",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -15529,7 +16907,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-054.v1"
+      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-057.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -16102,7 +17480,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-SECTION.ovl-adhoc-055.v1"
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-058.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -16119,7 +17497,7 @@
           "nodeId" : "at0.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-056.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-059.v1",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -16369,7 +17747,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-056.v1"
+      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-059.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -16942,7 +18320,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-SECTION.ovl-adhoc-057.v1"
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-060.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -16959,7 +18337,7 @@
           "nodeId" : "at0.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-058.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-061.v1",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -17209,7 +18587,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-058.v1"
+      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-061.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -17782,7 +19160,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-SECTION.ovl-adhoc-059.v1"
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-062.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -17799,7 +19177,7 @@
           "nodeId" : "at0.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-060.v1",
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-063.v1",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -18049,7 +19427,7 @@
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-060.v1"
+      "value" : "openEHR-EHR-EVALUATION.ovl-problem_diagnosis-063.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
